@@ -21,7 +21,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     " lastName VARCHAR(255) , " +
                     " age INT)";
             statement.executeUpdate(SQL);
-            System.out.println("Create table is done.");
+            System.out.println("Create table complete.");
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }

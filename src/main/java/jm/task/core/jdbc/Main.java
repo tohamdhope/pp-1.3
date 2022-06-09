@@ -17,7 +17,7 @@ public class Main {
         System.out.println("|   id  |     name      |    lastName        |    age   |");
         System.out.println("+-------+---------------+--------------------+----------+");
         userService.getAllUsers();
-        userService.cleanUsersTable();
+        //userService.cleanUsersTable();
         //userService.dropUsersTable();
     }
 }
