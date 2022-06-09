@@ -21,6 +21,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     " lastName VARCHAR(255) , " +
                     " age INT)";
             statement.executeUpdate(SQL);
+            System.out.println("Create table is done.");
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
@@ -31,7 +32,9 @@ public class UserDaoJDBCImpl implements UserDao {
              Statement statement = connection.createStatement()) {
             String SQL = "DROP TABLE IF EXISTS User";
             statement.executeUpdate(SQL);
+            System.out.println("Table has been delete.");
         } catch (SQLException sqlException) {
+            System.out.println("Table delete is failed ...");
             sqlException.printStackTrace();
         }
     }
@@ -45,8 +48,10 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.setString(2, lastName);
             statement.setByte(3, age);
             statement.executeUpdate();
+            System.out.println("User has been adding to table.");
 
         } catch (SQLException sqlException) {
+            System.out.println("Adding user failed ...");
             sqlException.printStackTrace();
         }
 
@@ -58,7 +63,9 @@ public class UserDaoJDBCImpl implements UserDao {
             PreparedStatement statement = connection.prepareStatement(SQL);
             statement.setLong(1, id);
             statement.executeUpdate();
+            System.out.println("User has been delete.");
         } catch (SQLException sqlException) {
+            System.out.println("User delete failed ...");
             sqlException.printStackTrace();
         }
     }
@@ -88,7 +95,9 @@ public class UserDaoJDBCImpl implements UserDao {
              Statement statement = connection.createStatement()) {
             String SQL = "TRUNCATE TABLE User";
             statement.executeUpdate(SQL);
+            System.out.println("All users from table has been delete.");
         } catch (SQLException sqlException) {
+            System.out.println("Delete all users from table failed ...");
             sqlException.printStackTrace();
         }
     }
